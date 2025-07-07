@@ -302,7 +302,7 @@
             width: 120px;
             height: 120px;
             margin: 15px auto;
-            border-radius: 50%;
+            border-radius: 15px;
             background: linear-gradient(135deg, #a8edea, #fed6e3);
             display: flex;
             align-items: center;
@@ -310,10 +310,18 @@
             font-size: 3em;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
         }
 
         .character-card:hover .character-image {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .character-emoji {
+            font-size: 3em;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
         }
 
         .modal {
@@ -365,8 +373,8 @@
         }
 
         .modal-character-image {
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 300px;
             margin: 20px auto;
             border-radius: 20px;
             background: linear-gradient(135deg, #667eea, #764ba2);
@@ -376,6 +384,51 @@
             font-size: 5em;
             color: white;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .modal-character-emoji {
+            font-size: 5em;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+        }
+
+        /* 캐릭터별 이미지 스타일 */
+        .tralalero-bg {
+            background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop&crop=center');
+            background-blend-mode: overlay;
+            background-color: rgba(100, 149, 237, 0.7);
+        }
+
+        .bombardiro-bg {
+            background-image: url('https://images.unsplash.com/photo-1567454117677-de13b3db35b5?w=400&h=400&fit=crop&crop=center');
+            background-blend-mode: overlay;
+            background-color: rgba(220, 20, 60, 0.7);
+        }
+
+        .ballerina-bg {
+            background-image: url('https://images.unsplash.com/photo-1527933053326-89d1746b76b9?w=400&h=400&fit=crop&crop=center');
+            background-blend-mode: overlay;
+            background-color: rgba(255, 182, 193, 0.7);
+        }
+
+        .tung-bg {
+            background-image: url('https://images.unsplash.com/photo-1569163166831-de62fa5e4286?w=400&h=400&fit=crop&crop=center');
+            background-blend-mode: overlay;
+            background-color: rgba(139, 69, 19, 0.7);
+        }
+
+        .brr-bg {
+            background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=400&fit=crop&crop=center');
+            background-blend-mode: overlay;
+            background-color: rgba(34, 139, 34, 0.7);
+        }
+
+        .chimp-bg {
+            background-image: url('https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400&h=400&fit=crop&crop=center');
+            background-blend-mode: overlay;
+            background-color: rgba(255, 215, 0, 0.7);
         }
 
         .spinning {
@@ -476,33 +529,45 @@
             <h2>🌟 유명한 Italian Brainrot 캐릭터들</h2>
             <p>클릭하면 상세 정보와 이미지를 볼 수 있어요!</p>
             <div class="character-grid">
-                <div class="character-card" onclick="showCharacterModal('Tralalero Tralala', '🦈', 'Tralalero Tralala', '이탈리아 브레인롯의 시초가 된 전설적인 캐릭터! 나이키 신발을 신은 3다리 상어로 해변을 걸어다니며 이상한 이탈리아어를 중얼거립니다. 모든 브레인롯 캐릭터의 조상격이죠.')">
-                    <div class="character-image">🦈</div>
+                <div class="character-card" onclick="showCharacterModal('Tralalero Tralala', '🦈', 'Tralalero Tralala', '이탈리아 브레인롯의 시초가 된 전설적인 캐릭터! 나이키 신발을 신은 3다리 상어로 해변을 걸어다니며 이상한 이탈리아어를 중얼거립니다. 모든 브레인롯 캐릭터의 조상격이죠.', 'tralalero-bg')">
+                    <div class="character-image tralalero-bg">
+                        <div class="character-emoji">🦈</div>
+                    </div>
                     <h3>Tralalero Tralala</h3>
                     <p>나이키 신발을 신은 3다리 상어</p>
                 </div>
-                <div class="character-card" onclick="showCharacterModal('Bombardiro Crocodilo', '✈️', 'Bombardiro Crocodilo', '악어 머리에 폭격기 몸통을 가진 전투 캐릭터. 하늘에서 폭탄을 떨어뜨려 공격하며, 매우 공격적인 성격을 가지고 있습니다. 근접전에서는 약하다고 알려져 있어요.')">
-                    <div class="character-image">✈️</div>
+                <div class="character-card" onclick="showCharacterModal('Bombardiro Crocodilo', '✈️', 'Bombardiro Crocodilo', '악어 머리에 폭격기 몸통을 가진 전투 캐릭터. 하늘에서 폭탄을 떨어뜨려 공격하며, 매우 공격적인 성격을 가지고 있습니다. 근접전에서는 약하다고 알려져 있어요.', 'bombardiro-bg')">
+                    <div class="character-image bombardiro-bg">
+                        <div class="character-emoji">🐊</div>
+                    </div>
                     <h3>Bombardiro Crocodilo</h3>
                     <p>악어 폭격기 하이브리드</p>
                 </div>
-                <div class="character-card" onclick="showCharacterModal('Ballerina Cappuccina', '🩰', 'Ballerina Cappuccina', '카푸치노 컵이 머리인 우아한 발레리나. 음악을 사랑하며 graceful한 피루엣을 춥니다. Cappuccino Assassino와 결혼했지만 복잡한 관계를 가지고 있어요.')">
-                    <div class="character-image">🩰</div>
+                <div class="character-card" onclick="showCharacterModal('Ballerina Cappuccina', '🩰', 'Ballerina Cappuccina', '카푸치노 컵이 머리인 우아한 발레리나. 음악을 사랑하며 graceful한 피루엣을 춥니다. Cappuccino Assassino와 결혼했지만 복잡한 관계를 가지고 있어요.', 'ballerina-bg')">
+                    <div class="character-image ballerina-bg">
+                        <div class="character-emoji">☕</div>
+                    </div>
                     <h3>Ballerina Cappuccina</h3>
                     <p>카푸치노 머리 발레리나</p>
                 </div>
-                <div class="character-card" onclick="showCharacterModal('Tung Tung Tung Sahur', '🥢', 'Tung Tung Tung Sahur', '인도네시아 기원의 캐릭터로 야구 방망이를 든 막대기 모양 생명체입니다. 라마단 sahur(새벽식사) 시간을 알리는 역할을 하며, 이름의 tung이 많을수록 더 강해진다고 알려져 있어요.')">
-                    <div class="character-image">🥢</div>
+                <div class="character-card" onclick="showCharacterModal('Tung Tung Tung Sahur', '🥢', 'Tung Tung Tung Sahur', '인도네시아 기원의 캐릭터로 야구 방망이를 든 막대기 모양 생명체입니다. 라마단 sahur(새벽식사) 시간을 알리는 역할을 하며, 이름의 tung이 많을수록 더 강해진다고 알려져 있어요.', 'tung-bg')">
+                    <div class="character-image tung-bg">
+                        <div class="character-emoji">🏏</div>
+                    </div>
                     <h3>Tung Tung Tung Sahur</h3>
                     <p>야구 방망이 든 막대기 인간</p>
                 </div>
-                <div class="character-card" onclick="showCharacterModal('Brr Brr Patapim', '🐒', 'Brr Brr Patapim', '숲과 원숭이가 합쳐진 신비로운 하이브리드로 큰 발을 가지고 있습니다. 숲의 수호자 역할을 하며, 침입자가 나타나면 조수 Mateo와 함께 돌을 던져 위협합니다.')">
-                    <div class="character-image">🐒</div>
+                <div class="character-card" onclick="showCharacterModal('Brr Brr Patapim', '🐒', 'Brr Brr Patapim', '숲과 원숭이가 합쳐진 신비로운 하이브리드로 큰 발을 가지고 있습니다. 숲의 수호자 역할을 하며, 침입자가 나타나면 조수 Mateo와 함께 돌을 던져 위협합니다.', 'brr-bg')">
+                    <div class="character-image brr-bg">
+                        <div class="character-emoji">🌳</div>
+                    </div>
                     <h3>Brr Brr Patapim</h3>
                     <p>숲과 원숭이의 하이브리드</p>
                 </div>
-                <div class="character-card" onclick="showCharacterModal('Chimpanzini Bananini', '🍌', 'Chimpanzini Bananini', '바나나를 몸통으로 한 침팬지로 무적(indestructible)이라고 알려져 있습니다. 브레인롯 세계에서 가장 강력한 캐릭터 중 하나로 여겨지며, 많은 팬들이 사랑하는 캐릭터예요.')">
-                    <div class="character-image">🍌</div>
+                <div class="character-card" onclick="showCharacterModal('Chimpanzini Bananini', '🍌', 'Chimpanzini Bananini', '바나나를 몸통으로 한 침팬지로 무적(indestructible)이라고 알려져 있습니다. 브레인롯 세계에서 가장 강력한 캐릭터 중 하나로 여겨지며, 많은 팬들이 사랑하는 캐릭터예요.', 'chimp-bg')">
+                    <div class="character-image chimp-bg">
+                        <div class="character-emoji">🐵</div>
+                    </div>
                     <h3>Chimpanzini Bananini</h3>
                     <p>바나나 몸통 침팬지</p>
                 </div>
@@ -603,8 +668,11 @@
             }, 1500);
         }
 
-        function showCharacterModal(name, emoji, title, description) {
-            document.getElementById('modalCharacterImage').textContent = emoji;
+        function showCharacterModal(name, emoji, title, description, bgClass) {
+            const modalImage = document.getElementById('modalCharacterImage');
+            modalImage.className = `modal-character-image ${bgClass}`;
+            modalImage.innerHTML = `<div class="modal-character-emoji">${emoji}</div>`;
+            
             document.getElementById('modalCharacterName').textContent = title;
             document.getElementById('modalCharacterDescription').textContent = description;
             document.getElementById('characterModal').style.display = 'block';
